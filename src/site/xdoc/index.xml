@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>Google API plugin</title>
+    </properties>
+    <body>
+        <section name="Google API plugin Overview">
+            <subsection name="Introduction">
+                <p>
+                    <img src="images/googleapi.gif" />
+                </p>
+                <p>The Google Base data API exposes the following functionality via a webservice:
+                </p>
+                <p>
+                    <ul>
+                        <li> searching for data items</li>
+                        <li> discovering metadata</li>
+                        <li> inserting, updating, and deleting data items</li>
+                    </ul>
+                </p>
+            </subsection>
+        </section>
+    </body>
+</document>

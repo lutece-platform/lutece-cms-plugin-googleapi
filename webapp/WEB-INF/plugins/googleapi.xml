@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?><plug-in>
+    
+    <!-- Plugin Informations -->
+    <name>googleapi</name>
+    <class>fr.paris.lutece.portal.service.plugin.PluginDefaultImplementation</class>
+    <version>2.1.2</version>
+    <description>googleapi.plugin.description</description>
+    <documentation/>
+    <installation/>
+    <changes/>
+    <user-guide/>
+    <provider>googleapi.plugin.provider</provider>
+    <provider-url>http://lutece.paris.fr</provider-url>
+    <icon-url>images/admin/skin/plugins/googleapi/googleapi.png</icon-url>
+    <copyright>Copyright (c) 2001-2008 Mairie de Paris</copyright>
+    <core-version-dependency>
+		<min-core-version>2.3.0</min-core-version>
+		<max-core-version/>	
+	</core-version-dependency>
+    <db-pool-required>0</db-pool-required>
+
+    <!-- Applications -->
+    <applications>
+        <application>
+            <application-id>googleapi</application-id>
+            <application-class>fr.paris.lutece.plugins.googleapi.web.GoogleApiApp</application-class>
+        </application>
+    </applications>
+
+    <!-- Insert Services -->
+    <insert-services>
+        <insert-service>
+            <insert-service-id>GOOGLE_API_INSERT_SERVICE</insert-service-id>
+            <insert-service-name>googleapi.insertService.name</insert-service-name>
+            <insert-service-bean-class>fr.paris.lutece.plugins.googleapi.web.GoogleApiLinkServiceJspBean</insert-service-bean-class>
+            <insert-service-label>googleapi.insertService.label</insert-service-label>
+        </insert-service>
+    </insert-services>
+</plug-in>

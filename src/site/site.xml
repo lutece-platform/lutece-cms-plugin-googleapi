@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Lutece">
+    
+    <version />
+    
+    <body>
+        <links>
+            <item name="FR" href="/fr/index.html" />
+        </links>
+        
+        <menu name="Google API plugin">
+            <item name="Introduction" href="index.html"/>
+            <item name="Installation" href="install.html"/>
+        </menu>
+        
+        <menu name="Google API links">
+            <item name="Google Base API" href="http://code.google.com/apis/base/index.html" target="_blank"/>
+        </menu>	    
+        
+        <menu name="Downloads" inherit="bottom">
+			     <item name="Released versions" href="../../stable_builds/plugins/plugin-googleapi/"/>
+			     <item name="Nightly builds" href="../../nightly_builds/plugins/plugin-googleapi/" />          
+    		</menu>
+        
+        <menu ref="reports" />
+    </body>
+</project>

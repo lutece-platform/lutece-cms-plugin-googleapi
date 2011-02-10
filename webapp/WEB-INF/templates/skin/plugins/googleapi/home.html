@@ -1,0 +1,31 @@
+<div class="portlet-content portlet-content">
+    <form action="jsp/site/Portal.jsp" >
+        <input type="hidden" name="page" value="googleapi" />
+        <p>
+            <@combo name="provider" items=feeds_list default_value="${provider}" />
+        </p>
+        <input type="text" class="-lutece-input" name="search" value="${query}" />
+        <input type="submit" class="-lutece-input" value="Rechercher"/>
+        
+        <table>
+            <#list items_list as item >
+            <tr>
+                <td>
+                    <a href="${item.link}">
+                        <img src="${item.thumbnailUrl}" />
+                    </a>
+                </td>
+                <td valign="top" >
+                    <p>
+                        <a href="${item.link}">${item.title}</a>
+                    </p>
+                    <p>
+                        ${item.content}
+                    </p>           
+                    
+                </td>
+            </tr>
+            </#list>
+        </table>      
+    </form>
+</div>

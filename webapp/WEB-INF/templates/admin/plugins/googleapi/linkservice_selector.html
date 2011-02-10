@@ -1,0 +1,24 @@
+<div class="insert-service">
+    <h2>#i18n{googleapi.linkservice_selector.title}</h2>
+    <form action="jsp/admin/plugins/googleapi/Search.jsp" >
+        <input type="hidden" name="input" value="${input}" />
+        <input type="hidden" name="page" value="googleapi" />
+        <p>
+            <label for="width" >#i18n{googleapi.linkservice_selector.labelWidth} : </label>
+            <input type="text" name="width" value="${width}" size="3" />
+        </p>
+        <p>
+            <label for="height" >#i18n{googleapi.linkservice_selector.labelHeight} : </label>
+            <input type="text" name="height" value="${height}" size="3" />
+        </p>
+        <p>
+            <label for="provider">#i18n{googleapi.linkservice_selector.labelSearch} : </label>
+            <@combo name="provider" items=feeds_list default_value="" />
+        </p>
+        <p>
+            <label for="search" >#i18n{googleapi.linkservice_selector.labelQuery} : </label>
+            <input type="text" name="search" value="" />
+        </p>
+        <input type="submit" class="button" value="#i18n{googleapi.linkservice_selector.buttonSearch}"/>
+    </form>
+</div>

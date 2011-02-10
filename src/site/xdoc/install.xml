@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>Installation</title>
+    </properties>
+    <body>
+        <section name="Installation">
+            <subsection name="Requirements">
+                <p>This module requires version 2.0 or higher of the Lutece kernel (lutece-core)</p>
+            </subsection>
+            
+            
+            <subsection name="Build and deploy">
+                <p>
+                    To build the latest version just follow this steps 
+                </p>
+                <p>
+                    (NB: Subversion's client and Maven2 should be installed on your system)
+                </p>
+                <p>                       
+                    <div class="source">
+                        <pre>
+$ svn export http://dev.lutece.paris.fr/svn/lutece/portal/trunk/plugins/plugin-googleapi plugin-googleapi
+$ cd plugin-googleapi
+$ mvn lutece:assembly
+                        </pre>
+                    </div>
+                </p>
+                <p>
+                    The last command will build the plugin's package as an archive named <code>plugin-googleapi-xxx-bin-xxxx.zip</code>
+                    in the directory <code>./target/assembly</code>
+                </p>
+                <p>
+                    To deploy this package, just extract its content in your webapp's root.
+                </p>
+                
+            </subsection>
+            <subsection name="Configuration">
+                <p>As soon as the plugin has been extracted in the webapp, just activate it in the "Plugins management" feature of the Lutece backoffice</p>
+                <p>
+                    In the file <code>WEB-INF/conf/plugins/googleapi.properties</code> set your API key and default project id as follows :
+                </p>
+                <p>                       
+                    <div class="source">
+                        <pre>
+# Your Google API key. 
+googleapi.api.key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</pre>
+                    </div>
+                </p>
+                
+            </subsection>
+            <subsection name="Usage">
+                <p>The Google page is called by the following URL :</p>
+                <p><code>http://myhost/lutece/jsp/site/Portal.jsp?<strong>page=googleapi</strong></code>[&amp;id_project=<em>nnnnn</em>]</p>
+            </subsection>
+        </section>
+    </body>
+</document>

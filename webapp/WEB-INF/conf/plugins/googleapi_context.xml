@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    
+    
+    <!--                           Feeds Handler                           -->
+    <bean id="googleapi.simpleHandler"  class="fr.paris.lutece.plugins.googleapi.service.FeedHandler" />
+    <bean id="googleapi.youTubeHandler"  class="fr.paris.lutece.plugins.googleapi.modules.youtube.service.YouTubeHandler" />
+    
+    <!--                           Feeds                              -->
+    <bean id="googleapi.youtube"  class="fr.paris.lutece.plugins.googleapi.modules.youtube.business.YouTubeProvider" >
+        <property name="key" >
+            <value>youtube</value>
+        </property>
+        <property name="name" >
+            <value>YouTube videos (all videos)</value>
+        </property>
+        <property name="feedsUrl" >
+            <value>http://gdata.youtube.com/feeds/api/videos</value>
+        </property>
+        <property name="queryParameter" >
+            <value>vq</value>
+        </property>
+        <property name="feedHandler" >
+            <ref bean="googleapi.youTubeHandler" />
+        </property>
+    </bean>
+    
+    <bean id="googleapi.youtube1"  class="fr.paris.lutece.plugins.googleapi.business.FeedProvider" >
+        <property name="key" >
+            <value>youtube1</value>
+        </property>
+        <property name="name" >
+            <value>YouTube videos (top rated)</value>
+        </property>
+        <property name="feedsUrl" >
+            <value>http://gdata.youtube.com/feeds/api/standardfeeds/top_rated</value>
+        </property>
+        <property name="queryParameter" >
+            <value>vq</value>
+        </property>
+        <property name="feedHandler" >
+            <ref bean="googleapi.simpleHandler" />
+        </property>
+    </bean>
+    
+    <bean id="googleapi.youtube2"  class="fr.paris.lutece.plugins.googleapi.business.FeedProvider" >
+        <property name="key" >
+            <value>youtube2</value>
+        </property>
+        <property name="name" >
+            <value>YouTube videos (top favorites)</value>
+        </property>
+        <property name="feedsUrl" >
+            <value>http://gdata.youtube.com/feeds/api/standardfeeds/top_favorites</value>
+        </property>
+        <property name="queryParameter" >
+            <value>vq</value>
+        </property>
+        <property name="feedHandler" >
+            <ref bean="googleapi.simpleHandler" />
+        </property>
+    </bean>
+    
+    <bean id="googleapi.youtube3"  class="fr.paris.lutece.plugins.googleapi.business.FeedProvider" >
+        <property name="key" >
+            <value>youtube3</value>
+        </property>
+        <property name="name" >
+            <value>YouTube videos (Most viewed)</value>
+        </property>
+        <property name="feedsUrl" >
+            <value>http://gdata.youtube.com/feeds/api/standardfeeds/most_viewed</value>
+        </property>
+        <property name="queryParameter" >
+            <value>vq</value>
+        </property>
+        <property name="feedHandler" >
+            <ref bean="googleapi.simpleHandler" />
+        </property>
+    </bean>
+    
+    <bean id="googleapi.ebay"  class="fr.paris.lutece.plugins.googleapi.business.FeedProvider" >
+        <property name="key" >
+            <value>ebay</value>
+        </property>
+        <property name="name" >
+            <value>eBay products</value>
+        </property>
+        <property name="feedsUrl" >
+            <value>http://base.google.com/base/feeds/snippets</value>
+        </property>
+        <property name="queryParameter" >
+            <value>bq</value>
+        </property>
+        <property name="feedHandler" >
+            <ref bean="googleapi.simpleHandler" />
+        </property>
+    </bean>
+
+    <bean id="googleapi.feeds"  class="fr.paris.lutece.plugins.googleapi.service.FeedsService" >
+        <property name="feedsMap" >
+            <map>
+                <entry>
+                    <key><value>youtube</value></key>
+                    <ref bean="googleapi.youtube" />
+                </entry>
+                <entry>
+                    <key><value>youtube1</value></key>
+                    <ref bean="googleapi.youtube1" />
+                </entry>
+                <entry>
+                    <key><value>youtube2</value></key>
+                    <ref bean="googleapi.youtube2" />
+                </entry>
+                <entry>
+                    <key><value>youtube3</value></key>
+                    <ref bean="googleapi.youtube3" />
+                </entry>
+                <entry>
+                    <key><value>ebay</value></key>
+                    <ref bean="googleapi.ebay" />
+                </entry>
+            </map>
+        </property>
+    </bean>
+        
+</beans>
